@@ -17,7 +17,7 @@ model = pickle.load(open("model.pkl", "rb"))
 def home():
     return render_template('index.html')
 
-
+'''''
 @app.route("/predict", methods=['POST'])
 def predict():
     float_features = [float(x) for x in request.form.values()]
@@ -32,7 +32,7 @@ def predict():
         # return res
     return render_template('finalprediction.html', prediction=res)
 
-
+'''
 if __name__ == '__main__':
     app.run(debug=True)
     
