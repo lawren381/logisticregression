@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, render_template
 
 # create flask app
 
-app = Flask(__name__, template_folder="template")
+app = Flask(__name__, "template")
 
 # load pickle
 
