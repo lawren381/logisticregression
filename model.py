@@ -40,10 +40,5 @@ classifier.fit(x_train, y_train)
 ypred = classifier.predict(x_test)
 print(ypred)
 
-print(f'Accuracy Score: {accuracy_score(y_test, ypred)}')
-print(f'Confusion Matrix: \n{confusion_matrix(y_test, ypred)}')
-print(f'Area Under Curve: {roc_auc_score(y_test, ypred)}')
-print(f'Recall score: {recall_score(y_test, ypred)}')
-
 # make a pickle of the model
 pickle.dump(classifier, open("model.pkl", "wb"))
