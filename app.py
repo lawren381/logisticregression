@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, render_template
 
 # create flask app
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template")
 
 # load pickle
 
@@ -15,10 +15,9 @@ model = pickle.load(open("model.pkl", "rb"))
 
 @app.route('/')
 def home():
-    print("hello world")
-    #return render_template('index.html')
+    return render_template('index.html')
 
-'''''
+
 @app.route("/predict", methods=['POST'])
 def predict():
     float_features = [float(x) for x in request.form.values()]
@@ -33,7 +32,7 @@ def predict():
         # return res
     return render_template('finalprediction.html', prediction=res)
 
-'''
+
 if __name__ == '__main__':
     app.run(debug=True)
     
